@@ -19,9 +19,16 @@ function ThemeCard({ title, subtitle, htmlFile, pdfFile, downloadName, accentCol
     return () => window.removeEventListener('resize', onResize);
   }, []);
 
-  const previewMaxWidth = 380;
+  const cardPadding = 14;
+  const buttonPadding = 10;
+  const containerPadding = 16;
+  const isMobile = viewport.width < 768;
+  const availableCardWidth = isMobile
+    ? viewport.width - (containerPadding * 2)
+    : Math.min(480, (viewport.width - (containerPadding * 2) - 24) / 2);
+  const previewMaxWidth = availableCardWidth - (cardPadding * 2) - (buttonPadding * 2);
   const previewVisibleBaseHeight = 430;
-  const previewMaxHeight = 300;
+  const previewMaxHeight = isMobile ? 240 : 300;
   const previewScale = Math.min(previewMaxWidth / baseWidth, previewMaxHeight / previewVisibleBaseHeight);
   const previewWidth = Math.round(baseWidth * previewScale);
   const previewHeight = Math.round(previewVisibleBaseHeight * previewScale);
@@ -37,8 +44,8 @@ function ThemeCard({ title, subtitle, htmlFile, pdfFile, downloadName, accentCol
     <>
       <div
         style={{
-          flex: '1 1 400px',
-          maxWidth: '480px',
+          width: '100%',
+          maxWidth: '520px',
           boxSizing: 'border-box',
           borderRadius: '16px',
           padding: '14px',
@@ -198,8 +205,12 @@ function ThemeCard({ title, subtitle, htmlFile, pdfFile, downloadName, accentCol
 }
 
 function CvThemes() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
-    <div style={{ minHeight: '100vh', paddingTop: '80px', backgroundColor: '#0f1117' }}>
+    <div style={{ minHeight: '100vh', paddingTop: '80px', position: 'relative', zIndex: 1 }}>
       <h1 style={{ textAlign: 'center', color: '#ffffff', marginBottom: '6px', fontSize: '28px', letterSpacing: '0.02em' }}>
         CV Themes
       </h1>
@@ -210,19 +221,10 @@ function CvThemes() {
         display: 'flex',
         justifyContent: 'center',
         gap: '24px',
-        flexWrap: 'wrap',
-        padding: '0 24px 48px'
+        flexDirection: 'column',
+        alignItems: 'center',
+        padding: '0 16px 48px'
       }}>
-        <ThemeCard
-          title="Spy-Fi Lounge"
-          subtitle="Cormorant Garamond + DM Sans / Gold accent"
-          htmlFile="cv-lounge.html"
-          pdfFile="cv-lounge-2026.pdf"
-          downloadName="adrien-victor-cv-lounge-2026.pdf"
-          accentColor="rgb(95, 255, 89)"
-          accentBg="linear-gradient(135deg, rgba(1,51,170,0.7), rgba(0,0,0,0.2))"
-          glowColor="rgba(1, 51, 170, 0.45)"
-        />
         <ThemeCard
           title="Infograph"
           subtitle="Space Grotesk + Inter / Radar chart, timeline, domains"
@@ -232,6 +234,16 @@ function CvThemes() {
           accentColor="#ee6c4d"
           accentBg="linear-gradient(135deg, rgba(61,90,128,0.7), rgba(0,0,0,0.2))"
           glowColor="rgba(238, 108, 77, 0.25)"
+        />
+        <ThemeCard
+          title="Spy-Fi Lounge"
+          subtitle="Cormorant Garamond + DM Sans / Gold accent"
+          htmlFile="cv-lounge.html"
+          pdfFile="cv-lounge-2026.pdf"
+          downloadName="adrien-victor-cv-lounge-2026.pdf"
+          accentColor="#22d3ee"
+          accentBg="linear-gradient(135deg, rgba(34,211,238,0.15), rgba(10,10,26,0.6))"
+          glowColor="rgba(34, 211, 238, 0.25)"
         />
       </div>
     </div>

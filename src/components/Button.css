@@ -1,5 +1,5 @@
 :root{
-    --primary: rgb(95, 255, 89);
+    --primary: #22d3ee;
 }
 
 .btn {
@@ -18,7 +18,7 @@ border: 1px solid var(--primary);
 
 .btn--outline {
     background-color: transparent;
-    color: rgb(95, 255, 89);
+    color: #22d3ee;
     padding: 8px 20px;
     border: 1px solid var(--primary);
     transition: all 0.3 ease-out;
@@ -68,7 +68,7 @@ button:active {
     margin-top: 15px;
     margin-bottom: 15px;
     text-align: left;
-    border: 1px solid rgb(95, 255, 89) !important;
+    border: 1px solid #22d3ee !important;
     border-radius: 15px;
     box-sizing: border-box;
     text-indent:-7%;
@@ -81,7 +81,7 @@ button:active {
   .hr:after {
     content: '';
     display: block;
-    border-top: 1px solid rgb(95, 255, 89);
+    border-top: 1px solid #22d3ee;
     margin-top: 0.4em;
     margin-bottom: 0.4em;
   }
@@ -92,7 +92,7 @@ ol, ul {
 
 .description ul li:before {
     content: '\2713'!important;
-    color: rgb(95, 255, 89);
+    color: #22d3ee;
     margin-right: 7px;
     vertical-align: middle;
     font-size: 1.2em!important;
@@ -102,7 +102,7 @@ ol, ul {
     transform: scale(.8);
     display: flex;
     justify-content: center;
-    box-shadow: 0 0 10px rgb(95, 255, 89);
+    box-shadow: 0 0 10px #22d3ee;
   }
 
 /* -------------- FAT BABY BUTTON -------------- */

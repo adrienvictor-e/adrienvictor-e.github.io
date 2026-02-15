@@ -29,7 +29,7 @@ video {
   
   #header {
     padding: 10px;
-    color: rgb(95, 255, 89);
+    color: #22d3ee;
     font-size: 26px;
     font-family: sans-serif;
     display: flex;
@@ -47,7 +47,7 @@ video {
   #weekdays {
     width: 100%;
     display: flex;
-    color: rgb(95, 255, 89);
+    color: #22d3ee;
   }
   #weekdays div {
     width: 100px;
@@ -67,21 +67,21 @@ video {
     box-sizing: border-box;
     background-color: rgba(0, 0, 0, 0.493);
     margin: 5px;
-    box-shadow: 0px 0px 3px rgb(95, 255, 89);
+    box-shadow: 0px 0px 3px #22d3ee;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    color: rgb(95, 255, 89);
+    color: #22d3ee;
   }
   
   .day:hover {
     background-color:#414141b6;
-    color:rgb(95, 255, 89);
+    color:#22d3ee;
   }
   
   .day + .currentDay {
     background-color:#414141b6;
-    color:rgb(95, 255, 89);
+    color:#22d3ee;
   }
 
   /* Alternative color for the day hover and current day: #540474c2 */
@@ -89,7 +89,7 @@ video {
   .event {
     font-size: 11px;
     padding: 3px;
-    background-color: rgb(95, 255, 89);
+    background-color: #22d3ee;
     color: #0A2C80;
     border-radius: 5px;
     max-height: 55px;
@@ -111,7 +111,7 @@ video {
     left: calc(50% - 175px);
     position: absolute;
     font-family: sans-serif;
-    color:rgb(95, 255, 89);
+    color:#22d3ee;
   }
   #eventTitleInput {
     margin-top: 10px;
@@ -128,11 +128,11 @@ video {
     border: 2px solid rgb(255, 91, 145);
   }
   #cancelButton, #deleteButton {
-    background-color: rgb(95, 255, 89);
+    background-color: #22d3ee;
     padding: 1px 6px;
   }
   #saveButton, #closeButton {
-    background-color: rgb(95, 255, 89);
+    background-color: #22d3ee;
     padding: 1px 6px;
   }
   #eventText {

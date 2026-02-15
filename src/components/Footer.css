@@ -1,6 +1,6 @@
 .footer-container {
-    background: #0000009f;
-    margin-top: 200px;
+    background: rgba(10, 10, 26, 0.85);
+    margin-top: 0;
     padding-top: 10px;
     padding-bottom: 50px;
     display: flex;
@@ -10,7 +10,7 @@
   }
   
   .footer-logo {
-    color: rgb(95, 255, 89);
+    color: #22d3ee;
     cursor: pointer;
     text-decoration: none;
     font-size: 2rem;
@@ -147,7 +147,7 @@
     font-family: 'Caveat', cursive;
     font-weight: lighter;
     font-size: 25px;
-    color: rgb(95, 255, 89);
+    color: #22d3ee;
     text-align: center;
     margin: 30px;
   }

@@ -2,14 +2,12 @@ import React from 'react'
 import '../../App.css'
 import { Link } from 'react-router-dom';
 import { ExternalLink } from 'react-external-link';
-import backgroundvideo from '../../videos/video-compressed.mp4';
 
 
 function Fullstack() {
   window.scrollTo(0, 0);
     return (
         <div className="cards">
-            <video src={backgroundvideo} loop autoPlay muted />
         <div className='hero'>
         <h1>Fullstack Projects</h1>
         <h2 className="herosection">

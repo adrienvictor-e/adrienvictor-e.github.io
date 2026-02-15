@@ -1,13 +1,11 @@
 import React from 'react'
 import '../../App.css'
 import '../Button.css'
-import backgroundvideo from '../../videos/video-compressed.mp4';
 
 function Videos() {
   window.scrollTo(0, 0);
     return (
       <div className="cards">
-            <video src={backgroundvideo} loop autoPlay muted />
         <div className='hero'>
         <h1>My videos</h1>
         <h2 className="herosection">
