@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import CardItem from "./CardItem"
 import CardItemLink from "./CardItemLink"
 import bean from '../images/Mr bean faces/naughty_mr.bean_gif_calendar_background_5.gif';
@@ -6,15 +7,31 @@ import ecrdocker from '../images/ECR docker terraform.jpeg';
 import reactoverview from '../images/Vid-thumbnail.png';
 import diary from '../images/Diary.jpg'
 import jslightbox from '../images/Lightbox grid thumbnail min.jpg'
-import cvloungepreview from '../images/cv-lounge-preview.png'
-import backgroundvideo from '../videos/video-compressed.mp4'
+import cvinfographpreview from '../images/cv-infograph-preview.png'
+import chespiritothumb from '../images/chespirito-preview.jpg'
+/* background video removed — using CSS aurora background */
 
 
 
 function Cards() {
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            { threshold: 0.15 }
+        );
+        document.querySelectorAll('.cards__item').forEach((el) => observer.observe(el));
+        return () => observer.disconnect();
+    }, []);
+
     return (
         <div className='cards'>
-            <video src={backgroundvideo} loop autoPlay muted />
             <div className='hero'>
             <h1>Projects Overview</h1>
             <h2>"Any sufficiently advanced technology is indistinguishable from Magic"<br></br>Arthur C. Clarke</h2>
@@ -38,22 +55,21 @@ function Cards() {
                         />
                     </ul>
                     <ul className="cards__items">
-                        <CardItem 
+                        <CardItem
                         src = {ecrdocker}
                         text="Use Terraform to deploy a React app to AWS ECR"
                         subtext= {[<h3 style={{fontSize: '14px'}}>✓ The containerized weather app is deployed to AWS ECR<br></br>✓ Terraform & React repos available</h3>]}
                         label='Video'
                         path='/videos'
                         />
-
-                        <CardItem 
+                        <CardItem
                         src = {reactoverview}
                         text="React Overview, How it works, Hooks"
                         subtext= {[<h3 style={{fontSize: '14px'}}>✓ The video is a bit crappy, but the content is really good<br></br>✓ Learn how React works under the hood</h3>]}
                         label='Video'
                         path='/videos'
                         />
-                        <CardItemLink 
+                        <CardItemLink
                         src = {diary}
                         text="Node.js CRUD app"
                         subtext= {[<h3>✓ Google authentication<br></br>✓ Public/private stories are stored in a cloud MongoDB database</h3>]}
@@ -61,7 +77,7 @@ function Cards() {
                         />
                     </ul>
                     <ul className="cards__items">
-                        <CardItem 
+                        <CardItem
                         src = {jslightbox}
                         subtext= {[<h3>✓ Responsive gird of images with soft zoom effect on hover<br></br>✓ HD Full screen image pop up on click</h3>]}
                         text="Fluid Lightbox Popup"
@@ -69,11 +85,18 @@ function Cards() {
                         path='/lightbox'
                         />
                         <CardItem
-                        src = {cvloungepreview}
+                        src = {cvinfographpreview}
                         text="CV Themes"
                         subtext={[<h3>✓ AI-designed CV themes: Spy-Fi Lounge & Infograph<br></br>✓ Click to preview, expand fullscreen, or download PDF</h3>]}
                         label='CV'
                         path='/cv-themes'
+                        />
+                        <CardItem
+                        src = {chespiritothumb}
+                        text="Chespirito Characters"
+                        subtext= {[<h3 style={{fontSize: '14px'}}>✓ Browse iconic Chespirito characters<br></br>✓ Search by name with flip-card animations</h3>]}
+                        label='Fullstack'
+                        path='/chespirito'
                         />
                     </ul>
                 </div>

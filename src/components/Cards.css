@@ -1,178 +1,259 @@
-video {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    z-index: -1;
+/* ─── Cards page ─── */
+.cards {
+  position: relative;
+  z-index: 1;
 }
 
-img {
-  filter: grayscale(100%);
-}
- 
+/* grayscale removed — card images use saturate/brightness filter instead */
 
+/* ─── Hero section ─── */
 .hero {
-
-  padding: 30px
-
+  position: relative;
+  z-index: 1;
+  padding: 30px;
 }
-  h1 {
-    padding-top: 55px;
-    padding-bottom: 5px;
-    text-align: center;
-    font-size: 42px;
-    color: rgb(95, 255, 89)
-  }
 
-  h2 {
-    text-align: center;
-    font-size: 32px;
-    text-shadow: 0px 0px 5px rgb(0, 7, 53);
-    color: rgb(95, 255, 89);
-    font-family: 'Caveat', cursive;
-    font-weight: lighter;
-    /* background-color:#02133a86;
-    width: 50%;
-    margin: auto;
-    border-radius: 15px; */
-  }
-  
+h1 {
+  padding-top: 55px;
+  padding-bottom: 5px;
+  text-align: center;
+  font-size: 42px;
+  color: #22d3ee;
+}
 
-  
-  .cards__container {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    max-width: 1120px;
-    width: 90%;
-    margin: 0 auto;
+h2 {
+  text-align: center;
+  font-size: 32px;
+  text-shadow: 0px 0px 12px rgba(10, 10, 26, 0.8);
+  color: #a78bfa;
+  font-family: 'Caveat', cursive;
+  font-weight: lighter;
+}
+
+/* ─── Cards ─── */
+.cards__container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  max-width: 1120px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.cards__wrapper {
+  position: relative;
+  margin: 50px 0 45px;
+}
+
+.cards__items {
+  margin-bottom: 24px;
+}
+
+.cards__item {
+  display: flex;
+  flex: 1;
+  margin: 0 1rem;
+  padding: 10px;
+  border-radius: 14px;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0.05) 40%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.15),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.1),
+    0 8px 32px rgba(0, 0, 0, 0.25),
+    0 2px 8px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(16px) saturate(1.2);
+  -webkit-backdrop-filter: blur(16px) saturate(1.2);
+  transition: box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.cards__item:hover {
+  border-color: rgba(34, 211, 238, 0.25);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.2),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.1),
+    0 12px 40px rgba(34, 211, 238, 0.1),
+    0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.cards__item__link {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  text-decoration: none;
+  background: rgba(15, 15, 35, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(34, 211, 238, 0.1);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cards__item__link:hover {
+  border-color: rgba(34, 211, 238, 0.3);
+  box-shadow: 0 8px 32px rgba(34, 211, 238, 0.1);
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: lighter;
+  color: #94a3b8;
+}
+
+h4 {
+  font-size: 23px;
+  color: #22d3ee;
+}
+
+h5 {
+  font-size: 18px;
+  font-weight: lighter;
+  color: #22d3ee;
+}
+
+.subtext {
+  margin-top: 7px;
+}
+
+.cards__item__pic-wrap {
+  position: relative;
+  width: 100%;
+  padding-top: 67%;
+  overflow: hidden;
+}
+
+/* ─── Glass overlay on image ─── */
+.cards__item__pic-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    linear-gradient(
+      160deg,
+      rgba(255, 255, 255, 0.12) 0%,
+      rgba(255, 255, 255, 0.03) 35%,
+      transparent 50%,
+      rgba(10, 10, 26, 0.15) 100%
+    );
+  box-shadow: inset 0 0 20px rgba(10, 10, 26, 0.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.cards__item__link:hover .cards__item__pic-wrap::before {
+  opacity: 0;
+}
+
+.fade-img {
+  animation-name: fade-img;
+  animation-duration: 2s;
+}
+
+/* ─── Category label (glass style) ─── */
+.cards__item__pic-wrap::after {
+  content: attr(data-category);
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  z-index: 5;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #c8d6e5;
+  background: rgba(15, 15, 35, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.cards__item__img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  object-position: top;
+  filter: saturate(0.35) brightness(0.85) !important;
+  transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.cards__item__link:hover .cards__item__img {
+  filter: saturate(1) brightness(1) !important;
+  transform: scale(1.05);
+}
+
+.cards__item__info {
+  padding: 20px 30px 30px;
+}
+
+.cards__item__text {
+  color: #22d3ee;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.backup-link {
+  color: #a78bfa;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+
+/* ─── Staggered fade-in on scroll ─── */
+.cards__item {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.cards__item.visible {
+  animation: cardFadeIn 0.6s ease forwards;
+}
+
+.cards__item.visible:nth-child(2) { animation-delay: 0.12s; }
+.cards__item.visible:nth-child(3) { animation-delay: 0.24s; }
+
+@keyframes cardFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .cards__wrapper {
-    position: relative;
-    margin: 50px 0 45px;
+}
+
+@media only screen and (min-width: 1200px) {
+  .content__blog__container {
+    width: 84%;
   }
-  
+}
+
+@media only screen and (min-width: 1024px) {
   .cards__items {
-    margin-bottom: 24px;
+    display: flex;
   }
-  
+}
+
+@media only screen and (max-width: 1024px) {
   .cards__item {
-    display: flex;
-    flex: 1;
-    margin: 0 1rem;
-    border-radius: 10px;
+    margin-bottom: 2rem;
   }
-  
-  .cards__item__link {
-    display: flex;
-    flex-flow: column;
-    width: 100%;
-    border-radius: 10px;
-    overflow: hidden;
-    text-decoration: none;
-    background-color: #02133a86;
-  }
-
-
-  h3 {
-    font-size:16px;
-    font-weight: lighter;
-    color: rgb(95, 255, 89)
-  }
-
-  h4 {
-    font-size:23px;
-    color: rgb(95, 255, 89)
-  }
-
-  h5 {
-    font-size:18px;
-    font-weight: lighter;
-    color: rgb(95, 255, 89)
-  }
-
-  .subtext {
-    margin-top: 7px
-  }
-  
-  .cards__item__pic-wrap {
-    position: relative;
-    width: 100%;
-    padding-top: 67%;
-    overflow: hidden;
-  }
-  
-  .fade-img {
-    animation-name: fade-img;
-    animation-duration: 2s;
-  }
-  
-  .cards__item__pic-wrap::after {
-    content: attr(data-category);
-    position: absolute;
-    bottom: 0;
-    margin-left: 10px;
-    padding: 6px 8px;
-    max-width: calc((100%) - 60px);
-    font-size: 15px;
-    font-weight: 700;
-    color: #ffffff;
-    background-color: #0133AA;
-    box-sizing: border-box;
-  }
-
-
-  .cards__item__img {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    height: 100%;
-    max-height: 100%;
-    object-fit: cover;
-    transition: all 0.2s linear;
-  }
-  
-  .cards__item__img:hover {
-    transform: scale(1.1);
-  }
-  
-  .cards__item__info {
-    padding: 20px 30px 30px;
-  }
-  
-  .cards__item__text {
-    color: rgb(95, 255, 89);
-    font-size: 20px;
-    line-height: 24px;
-  }
-
-  .backup-link {
-    color: rgb(170, 254, 167);
-    text-decoration: underline;
-    font-weight: bold;
-  }
-  
-  
-  @media only screen and (min-width: 1200px) {
-    .content__blog__container {
-      width: 84%;
-    }
-  }
-  
-  @media only screen and (min-width: 1024px) {
-    .cards__items {
-      display: flex;
-    }
-  }
-  
-  @media only screen and (max-width: 1024px) {
-    .cards__item {
-      margin-bottom: 2rem;
-    }
-  }
+}
