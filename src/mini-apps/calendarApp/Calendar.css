@@ -42,6 +42,9 @@ video {
 
   #container {
     width: 770px;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0 5px;
   }
 
   #weekdays {
@@ -50,8 +53,10 @@ video {
     color: #22d3ee;
   }
   #weekdays div {
-    width: 100px;
+    width: calc(100% / 7);
     padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
   }
   #calendar {
     width: 100%;
@@ -60,18 +65,51 @@ video {
     flex-wrap: wrap;
   }
   .day {
-    width: 100px;
+    width: calc(100% / 7 - 4px);
     padding: 10px;
     height: 100px;
     cursor: pointer;
     box-sizing: border-box;
     background-color: rgba(0, 0, 0, 0.493);
-    margin: 5px;
+    margin: 2px;
     box-shadow: 0px 0px 3px #22d3ee;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     color: #22d3ee;
+  }
+
+  @media screen and (max-width: 600px) {
+    .day {
+      height: 70px;
+      padding: 5px;
+      font-size: 12px;
+    }
+    #weekdays div {
+      padding: 5px;
+      font-size: 0;
+    }
+    #weekdays div::after {
+      font-size: 12px;
+    }
+    #weekdays div:nth-child(1)::after { content: "Sun"; }
+    #weekdays div:nth-child(2)::after { content: "Mon"; }
+    #weekdays div:nth-child(3)::after { content: "Tue"; }
+    #weekdays div:nth-child(4)::after { content: "Wed"; }
+    #weekdays div:nth-child(5)::after { content: "Thu"; }
+    #weekdays div:nth-child(6)::after { content: "Fri"; }
+    #weekdays div:nth-child(7)::after { content: "Sat"; }
+    #header {
+      font-size: 20px;
+    }
+    .event {
+      font-size: 9px;
+      padding: 2px;
+    }
+    #newEventModal, #deleteEventModal {
+      width: 280px;
+      left: calc(50% - 140px);
+    }
   }
   
   .day:hover {
