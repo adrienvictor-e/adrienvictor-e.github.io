@@ -1,18 +1,19 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import Navbar from './components/Navbar';
 import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import Home from './components/pages/Home';
-import Frontend from './components/pages/Frontend';
-import Fullstack from './components/pages/Fullstack';
-import Calendar from './mini-apps/calendarApp/Calendar';
-import BBapiApp from './mini-apps/BBAPI/BbapiApp';
-import ChesperitoApp from './mini-apps/Chespirito/ChesperitoApp';
-import Automation from './components/pages/Automation';
 import Footer from './components/Footer';
-import Lightbox from './mini-apps/FluidLightbox/Lightbox';
-import Videos from './components/pages/Videos';
-import CvThemes from './components/pages/CvThemes';
+
+const Frontend = React.lazy(() => import('./components/pages/Frontend'));
+const Fullstack = React.lazy(() => import('./components/pages/Fullstack'));
+const Automation = React.lazy(() => import('./components/pages/Automation'));
+const Videos = React.lazy(() => import('./components/pages/Videos'));
+const Calendar = React.lazy(() => import('./mini-apps/calendarApp/Calendar'));
+const BBapiApp = React.lazy(() => import('./mini-apps/BBAPI/BbapiApp'));
+const ChesperitoApp = React.lazy(() => import('./mini-apps/Chespirito/ChesperitoApp'));
+const Lightbox = React.lazy(() => import('./mini-apps/FluidLightbox/Lightbox'));
+const CvThemes = React.lazy(() => import('./components/pages/CvThemes'));
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
     </div>
     <Router>
      <Navbar />
+     <Suspense fallback={<div style={{ minHeight: '100vh' }} />}>
      <Switch>
       <Route path='/' exact component={Home} />
       <Route path='/frontend' component={Frontend} />
@@ -36,8 +38,9 @@ function App() {
       <Route path='/lightbox' component={Lightbox} />
       <Route path='/cv-themes' component={CvThemes} />
     </Switch>
+     </Suspense>
     <Footer />
-    </Router>     
+    </Router>
     </>
   );
 }

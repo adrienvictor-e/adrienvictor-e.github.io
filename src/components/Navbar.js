@@ -20,11 +20,10 @@ function Navbar() {
 
   useEffect(() => {
     showButton();
+    window.addEventListener("resize", showButton);
+    window.scrollTo(0, 0);
+    return () => window.removeEventListener("resize", showButton);
   }, []);
-
-  window.addEventListener("resize", showButton);
-
-  window.scrollTo(0, 0);
 
   return (
     <>

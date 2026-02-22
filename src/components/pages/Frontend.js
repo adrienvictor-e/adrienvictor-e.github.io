@@ -34,10 +34,27 @@ function Frontend() {
             Fluid Lightbox Popup <i class="fab fa-js-square"></i>
           </a>
           </Link>
-          <br></br>
+        </div>
+        <div className="hero-btns">
+        <h4 className="hr">CV Themes</h4>
+          <h5 className="stack"><i class="fab fa-react"></i> React &nbsp; &nbsp; <i class="fab fa-css3-alt"></i>&nbsp; CSS</h5>
+          <div className="description">
+            <ul>
+              <h3>
+                <li>
+                  AI-designed CV themes: Spy-Fi Lounge & Infograph
+                </li>
+                <li>
+                  Click to preview, expand fullscreen, or download PDF
+                </li>
+              </h3>
+            </ul>
+          </div>
+          <Link to='/cv-themes'>
           <a id="greenb" class="button fatbaby serif round glass">
-            Project tutorial video <i class="far fa-play-circle"></i>
+            CV Themes <i class="fab fa-react"></i>
           </a>
+          </Link>
         </div>
       </div>
     );

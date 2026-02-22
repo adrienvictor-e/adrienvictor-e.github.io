@@ -8,7 +8,6 @@ import reactoverview from '../images/Vid-thumbnail.png';
 import diary from '../images/Diary.jpg'
 import jslightbox from '../images/Lightbox grid thumbnail min.jpg'
 import cvinfographpreview from '../images/cv-infograph-preview.png'
-import chespiritothumb from '../images/chespirito-preview.jpg'
 /* background video removed — using CSS aurora background */
 
 
@@ -90,13 +89,6 @@ function Cards() {
                         subtext={[<h3>✓ AI-designed CV themes: Spy-Fi Lounge & Infograph<br></br>✓ Click to preview, expand fullscreen, or download PDF</h3>]}
                         label='CV'
                         path='/cv-themes'
-                        />
-                        <CardItem
-                        src = {chespiritothumb}
-                        text="Chespirito Characters"
-                        subtext= {[<h3 style={{fontSize: '14px'}}>✓ Browse iconic Chespirito characters<br></br>✓ Search by name with flip-card animations</h3>]}
-                        label='Fullstack'
-                        path='/chespirito'
                         />
                     </ul>
                 </div>

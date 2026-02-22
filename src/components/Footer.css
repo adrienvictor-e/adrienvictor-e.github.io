@@ -1,7 +1,5 @@
 .footer-container {
-  background: rgba(10, 10, 26, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(10, 10, 26, 0.92);
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   padding: 40px 20px;
 }
@@ -42,14 +40,6 @@
   color: #22d3ee;
 }
 
-.fb-page {
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
-}
-
-.fb-page:hover {
-  opacity: 1;
-}
 
 .footer-copy {
   color: #4a5568;
