@@ -2,17 +2,20 @@
 
 Personal portfolio and project showcase built with React.
 
-**Live:** [adrienvictor-e.github.io/back2front](https://adrienvictor-e.github.io/back2front)
+**Live:** [adrienvictor-e.github.io](https://adrienvictor-e.github.io)
 
 ## Projects
 
-| Project | Route | Description |
-|---------|-------|-------------|
-| Interactive Calendar | `/calendar` | Live calendar using the browser Date API with add/delete events (localStorage) |
-| Breaking Bad API | `/bbapi` | Character explorer with search and flip-card animations |
-| Fluid Lightbox | `/lightbox` | Responsive image grid with full-screen popup |
-| CV Themes | `/cv-themes` | Interactive CV viewer with Infograph and Spy-Fi Lounge themes |
-| Terraform + AWS ECR | `/videos` | Video walkthrough of deploying a containerized React app |
+| Project | Category | Route | Description |
+|---------|----------|-------|-------------|
+| Kubernetes Homelab | Infrastructure | [lab.adrienesquerre.com](https://lab.adrienesquerre.com) | 2x Raspberry Pi 5 running K3s with real-time Grafana dashboards, accessible worldwide via Cloudflare Tunnel |
+| Terraform + AWS ECR | Infrastructure / Video | `/videos`, `/infrastructure` | Containerized React app deployed to AWS ECR using Terraform |
+| Vector Databases & RAG | Video | `/videos` | How vector DBs and RAG enable secure AI interaction with private enterprise data |
+| Interactive Calendar | Fullstack | `/calendar` | Live calendar using the browser Date API with add/delete events (localStorage) |
+| Breaking Bad API | Fullstack | `/bbapi` | Character explorer with search and flip-card animations |
+| Node.js CRUD app | Back-end | [external](https://online-diary-adrien.onrender.com/) | Google auth, public/private stories stored in cloud MongoDB |
+| Fluid Lightbox | Front-end | `/lightbox` | Responsive image grid with full-screen popup |
+| CV Themes | Front-end | `/cv-themes` | AI-designed CV themes: Spy-Fi Lounge & Infograph |
 
 ## Tech Stack
 
@@ -20,7 +23,8 @@ Personal portfolio and project showcase built with React.
 - **Axios** for data fetching
 - **Material-UI** components
 - **Styled Components** + vanilla CSS
-- **GitHub Actions** for CI/CD to GitHub Pages
+- **Font Awesome 6** + **Devicon** for icons
+- **GitHub Pages** deployment via `gh-pages`
 
 ## Performance Notes: CSS Glass Shine Effect
 
@@ -87,4 +91,4 @@ Pushes to `main` trigger the GitHub Actions workflow (`.github/workflows/deploy-
 
 ## Author
 
-Adrien Victor Esquerre
+Adrien Victor E.
