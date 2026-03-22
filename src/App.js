@@ -7,7 +7,7 @@ import Footer from './components/Footer';
 
 const Frontend = React.lazy(() => import('./components/pages/Frontend'));
 const Fullstack = React.lazy(() => import('./components/pages/Fullstack'));
-const Automation = React.lazy(() => import('./components/pages/Automation'));
+const Infrastructure = React.lazy(() => import('./components/pages/Infrastructure'));
 const Videos = React.lazy(() => import('./components/pages/Videos'));
 const Calendar = React.lazy(() => import('./mini-apps/calendarApp/Calendar'));
 const BBapiApp = React.lazy(() => import('./mini-apps/BBAPI/BbapiApp'));
@@ -30,7 +30,7 @@ function App() {
       <Route path='/' exact component={Home} />
       <Route path='/frontend' component={Frontend} />
       <Route path='/fullstack' component={Fullstack} />
-      <Route path='/automation' component={Automation} />
+      <Route path='/infrastructure' component={Infrastructure} />
       <Route path='/videos' component={Videos} />
       <Route path='/calendar' component={Calendar} />
       <Route path='/bbapi' component={BBapiApp} />

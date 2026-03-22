@@ -13,8 +13,27 @@ function Videos() {
         </h2>
         </div>
         <div className="hero-btns">
+          <h4 className="hr">Vector Databases & RAG for Enterprise AI</h4>
+          <h5 className="stack"><i className="fas fa-database"></i> Vector DB / RAG / LLM</h5>
+          <div className="description">
+            <ul>
+              <h3>
+              <li>
+                  How vector databases enable AI to understand semantic meaning through multi-dimensional numerical data
+                </li>
+                <li>
+                  Secure RAG patterns for interacting with private data without exposing it to external providers
+                </li>
+              </h3>
+            </ul>
+          </div>
+          <div className="myvids">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/E9pp9M_eiLY" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+          </div>
+        </div>
+        <div className="hero-btns">
           <h4 className="hr">Terraform to deploy a React app to AWS ECR </h4>
-          <h5 className="stack"><i className="fab fa-docker"></i> Terraform, Docker & AWS</h5>
+          <h5 className="stack"><i className="devicon-terraform-plain"></i> Terraform / <i className="fa-brands fa-docker"></i> Docker / <i className="fa-brands fa-aws"></i> AWS</h5>
           <div className="description">
             <ul>
               <h3>
@@ -22,7 +41,7 @@ function Videos() {
                   A multi-stage stage Dockerfile is used
                 </li>
                 <li>
-                  Terraform pulls the Image from AWS ECR 
+                  Terraform pulls the Image from AWS ECR
                 </li>
                 <li>
                   NGINX web server, load balancer & auto-scalling on the background

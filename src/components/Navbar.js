@@ -62,11 +62,11 @@ function Navbar() {
             </li>
             <li className="nav-item">
               <Link
-                to="/frontend"
+                to="/infrastructure"
                 className="nav-links"
                 onClick={closeMobileMenu}
               >
-                Front-end
+                Infrastructure
               </Link>
             </li>
             <li className="nav-item">
@@ -80,11 +80,11 @@ function Navbar() {
             </li>
             <li className="nav-item">
               <Link
-                to="/automation"
+                to="/frontend"
                 className="nav-links"
                 onClick={closeMobileMenu}
               >
-                Automation
+                Front-end
               </Link>
             </li>
             <li className="nav-item">

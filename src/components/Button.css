@@ -94,7 +94,8 @@ button:active {
     border: 1px solid rgba(34, 211, 238, 0.15);
     border-radius: 10px;
     box-sizing: border-box;
-    text-indent: -7%;
+    text-indent: -1.2em;
+    padding-left: calc(35px + 1.2em);
 }
 
 .hr {

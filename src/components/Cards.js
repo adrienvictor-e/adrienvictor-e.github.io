@@ -8,6 +8,8 @@ import reactoverview from '../images/Vid-thumbnail.png';
 import diary from '../images/Diary.jpg'
 import jslightbox from '../images/Lightbox grid thumbnail min.jpg'
 import cvinfographpreview from '../images/cv-infograph-preview.png'
+import homelabpreview from '../images/Kub-homelab-2-thumb.png'
+import vectordbrag from '../images/ThumbnailVDB3.png'
 /* background video removed — using CSS aurora background */
 
 
@@ -38,19 +40,19 @@ function Cards() {
             <div className="cards__container">
                 <div className="cards__wrapper">
                     <ul className="cards__items">
-                        <CardItem 
-                        src = {bean}
-                        text= "React Interactive Calendar App"
-                        subtext= {[<h3>✓ Uses the browser's date API for a live calendar<br></br>✓ Daily events can be added or deleted (uses local storage)</h3>]}
-                        label='Fullstack'
-                        path='/calendar'
+                        <CardItemLink
+                        src = {homelabpreview}
+                        text="Kubernetes Homelab"
+                        subtext={[<h3>✓ 2x Raspberry Pi 5 running K3s with Prometheus & Grafana<br></br>✓ Real-time monitoring dashboards, accessible worldwide via HTTPS</h3>]}
+                        label='Infrastructure'
+                        href="https://lab.adrienesquerre.com"
                         />
-                        <CardItem 
-                        src = {breakingbean}
-                        text="React Breaking Bad API"
-                        subtext= {[<h3 style={{fontSize: '14px'}}>✓ Fetch API using Async function + Await promise<br></br>✓ Search bar with name filter</h3>]}
-                        label='Fullstack'
-                        path='/bbapi'
+                        <CardItem
+                        src = {vectordbrag}
+                        text="Vector Databases & RAG for Enterprise AI"
+                        subtext={[<h3 style={{fontSize: '14px'}}>✓ How vector DBs enable AI to understand semantic meaning<br></br>✓ Secure RAG patterns for private data without exposing it to external providers</h3>]}
+                        label='Video'
+                        path='/videos'
                         />
                     </ul>
                     <ul className="cards__items">
@@ -73,9 +75,24 @@ function Cards() {
                         text="Node.js CRUD app"
                         subtext= {[<h3>✓ Google authentication<br></br>✓ Public/private stories are stored in a cloud MongoDB database</h3>]}
                         label='Back-end'
+                        href="https://online-diary-adrien.up.railway.app/"
                         />
                     </ul>
                     <ul className="cards__items">
+                        <CardItem
+                        src = {bean}
+                        text= "React Interactive Calendar App"
+                        subtext= {[<h3>✓ Uses the browser's date API for a live calendar<br></br>✓ Daily events can be added or deleted (uses local storage)</h3>]}
+                        label='Fullstack'
+                        path='/calendar'
+                        />
+                        <CardItem
+                        src = {breakingbean}
+                        text="React Breaking Bad API"
+                        subtext= {[<h3 style={{fontSize: '14px'}}>✓ Fetch API using Async function + Await promise<br></br>✓ Search bar with name filter</h3>]}
+                        label='Fullstack'
+                        path='/bbapi'
+                        />
                         <CardItem
                         src = {jslightbox}
                         subtext= {[<h3>✓ Responsive gird of images with soft zoom effect on hover<br></br>✓ HD Full screen image pop up on click</h3>]}
