@@ -17,7 +17,7 @@ Personal portfolio and project showcase built with React.
 | Front-end | Fluid Lightbox | `/lightbox` | Responsive image grid with full-screen popup |
 | Front-end | CV Themes | `/cv-themes` | AI-designed CV themes: Spy-Fi Lounge & Infograph |
 
-## Tech Stack
+## Tech Stack of the Website
 
 - **React 17** with React Router 5 (HashRouter)
 - **Axios** for data fetching
