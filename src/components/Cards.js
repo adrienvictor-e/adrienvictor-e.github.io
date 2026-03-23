@@ -82,20 +82,20 @@ function Cards() {
                         <CardItem
                         src = {bean}
                         text= "React Interactive Calendar App"
-                        subtext= {[<h3>✓ Uses the browser's date API for a live calendar<br></br>✓ Daily events can be added or deleted (uses local storage)</h3>]}
+                        subtext= {[<h3 style={{fontSize: '13px'}}>✓ Uses the browser's date API for a live calendar<br></br>✓ Daily events can be added or deleted (uses local storage)</h3>]}
                         label='Fullstack'
                         path='/calendar'
                         />
                         <CardItem
                         src = {breakingbean}
                         text="React Breaking Bad API"
-                        subtext= {[<h3>✓ Fetch API using Async function + Await promise<br></br>✓ Search bar with name filter</h3>]}
+                        subtext= {[<h3 style={{fontSize: '13px'}}>✓ Fetch API using Async function + Await promise<br></br>✓ Search bar with name filter</h3>]}
                         label='Fullstack'
                         path='/bbapi'
                         />
                         <CardItem
                         src = {jslightbox}
-                        subtext= {[<h3>✓ Responsive gird of images with soft zoom effect on hover<br></br>✓ HD Full screen image pop up on click</h3>]}
+                        subtext= {[<h3 style={{fontSize: '13px'}}>✓ Responsive gird of images with soft zoom effect on hover<br></br>✓ HD Full screen image pop up on click</h3>]}
                         text="Fluid Lightbox Popup"
                         label='Frontend'
                         path='/lightbox'
@@ -103,7 +103,7 @@ function Cards() {
                         <CardItem
                         src = {cvinfographpreview}
                         text="CV Themes"
-                        subtext={[<h3>✓ AI-designed CV themes: Spy-Fi Lounge & Infograph<br></br>✓ Click to preview, expand fullscreen, or download PDF</h3>]}
+                        subtext={[<h3 style={{fontSize: '13px'}}>✓ AI-designed CV themes: Spy-Fi Lounge & Infograph<br></br>✓ Click to preview, expand fullscreen, or download PDF</h3>]}
                         label='CV'
                         path='/cv-themes'
                         />
