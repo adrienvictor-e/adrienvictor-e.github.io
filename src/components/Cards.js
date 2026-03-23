@@ -50,7 +50,7 @@ function Cards() {
                         <CardItem
                         src = {vectordbrag}
                         text="Vector Databases & RAG for Enterprise AI"
-                        subtext={[<h3 style={{fontSize: '14px'}}>✓ How vector DBs enable AI to understand semantic meaning<br></br>✓ Secure RAG patterns for private data without exposing it to external providers</h3>]}
+                        subtext={[<h3>✓ How vector DBs enable AI to understand semantic meaning<br></br>✓ Secure RAG patterns for private data without exposing it to external providers</h3>]}
                         label='Video'
                         path='/videos'
                         />
@@ -59,14 +59,14 @@ function Cards() {
                         <CardItem
                         src = {ecrdocker}
                         text="Use Terraform to deploy a React app to AWS ECR"
-                        subtext= {[<h3 style={{fontSize: '14px'}}>✓ The containerized weather app is deployed to AWS ECR<br></br>✓ Terraform & React repos available</h3>]}
+                        subtext= {[<h3>✓ The containerized weather app is deployed to AWS ECR<br></br>✓ Terraform & React repos available</h3>]}
                         label='Video'
                         path='/videos'
                         />
                         <CardItem
                         src = {reactoverview}
                         text="React Overview, How it works, Hooks"
-                        subtext= {[<h3 style={{fontSize: '14px'}}>✓ The video is a bit crappy, but the content is really good<br></br>✓ Learn how React works under the hood</h3>]}
+                        subtext= {[<h3>✓ The video is a bit crappy, but the content is really good<br></br>✓ Learn how React works under the hood</h3>]}
                         label='Video'
                         path='/videos'
                         />
@@ -89,7 +89,7 @@ function Cards() {
                         <CardItem
                         src = {breakingbean}
                         text="React Breaking Bad API"
-                        subtext= {[<h3 style={{fontSize: '14px'}}>✓ Fetch API using Async function + Await promise<br></br>✓ Search bar with name filter</h3>]}
+                        subtext= {[<h3>✓ Fetch API using Async function + Await promise<br></br>✓ Search bar with name filter</h3>]}
                         label='Fullstack'
                         path='/bbapi'
                         />
