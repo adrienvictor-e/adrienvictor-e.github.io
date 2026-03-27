@@ -91,7 +91,7 @@
     z-index: 0;
     pointer-events: none;
     background-image:
-      /* Fade from top */
+      /* Fade from top — keep pattern away from upper content */
       linear-gradient(to bottom,
         rgba(255,255,255,1) 0%,
         rgba(255,255,255,0.95) 10%,
@@ -102,6 +102,9 @@
         rgba(255,255,255,1) 0%,
         rgba(255,255,255,0.7) 20%,
         transparent 55%),
+      /* Fade the text zone (upper-center of pattern area) */
+      radial-gradient(ellipse 80% 50% at 50% 40%,
+        rgba(255,255,255,0.75) 0%, transparent 100%),
       /* Clear bottom-right corner */
       radial-gradient(circle at 100% 100%,
         rgba(255,255,255,1) 40mm, transparent 80mm);
@@ -224,21 +227,40 @@
     white-space: nowrap;
   }
 
-  /* ─── Skills ─── */
-  .skills {
-    text-align: center;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 11.5px;
-    color: #3d3832;
-    line-height: 1.9;
-    letter-spacing: 0.2px;
+  /* ─── Domain cards ─── */
+  .domain-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 6px;
   }
 
-  .sk {
-    color: #c8963e;
-    margin: 0 3px;
-    font-size: 6px;
-    vertical-align: middle;
+  .domain-card {
+    border: none;
+    padding: 3px 8px;
+    text-align: center;
+  }
+
+  .domain-card:nth-child(2) { border-left-color: #96782a; }
+  .domain-card:nth-child(3) { border-left-color: #b8a070; }
+  .domain-card:nth-child(4) { border-left-color: #7a6e62; }
+  .domain-card:nth-child(5) { border-left-color: #c8963e; }
+  .domain-card:nth-child(6) { border-left-color: #96782a; }
+
+  .domain-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #2d2926;
+    margin-bottom: 2px;
+  }
+
+  .domain-skills {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 9.5px;
+    color: #7a6e62;
+    line-height: 1.4;
   }
 
   /* ─── Experience ─── */
@@ -309,10 +331,13 @@
   }
 
   .bcol.narrow {
-    flex: 0.5;
+    flex: 0.65;
   }
 
   .bh {
+    display: flex;
+    align-items: center;
+    gap: 5px;
     font-family: 'Cormorant Garamond', serif;
     font-size: 9.5px;
     font-weight: 600;
@@ -322,6 +347,13 @@
     margin-bottom: 7px;
     padding-bottom: 3px;
     border-bottom: 0.3px solid rgba(200,150,62,0.25);
+  }
+
+  .bh-icon {
+    width: 13px;
+    height: 13px;
+    fill: #c8963e;
+    flex-shrink: 0;
   }
 
   .edu-item {
@@ -367,12 +399,20 @@
     color: #3d3832;
     line-height: 2.1;
   }
+
+  .lang-dot {
+    color: #c8963e;
+    margin: 0 2px;
+  }
+
+  .lang-level {
+    font-size: 9.5px;
+    color: #9c9389;
+  }
 </style>
 </head>
 <body>
 <div class="page">
-<div class="pattern"></div>
-<div class="pattern-fade"></div>
 <div class="content">
 
   <!-- Header -->
@@ -385,19 +425,41 @@
 
   <div class="tagline">
     Senior DevOps Engineer<br>
-    Infrastructure as Code &middot; AI Agent Orchestration
+    Infrastructure as Code &middot; Cloud Automation
   </div>
 
   <div class="contact">
-    Prague, Czechia<span class="csep">&middot;</span>+420 77 888 44 56<span class="csep">&middot;</span>esquerre.adrien@gmail.com<br>
+    Prague, Czechia<span class="csep">&middot;</span>+420 XX XXX XX XX<span class="csep">&middot;</span>admin@adrienvictor.com<br>
     <a href="https://linkedin.com/in/adrienvictor">linkedin.com/in/adrienvictor</a><span class="csep">&middot;</span><a href="https://adrienvictor.com">adrienvictor.com</a>
   </div>
 
-  <!-- Skills -->
-  <div class="sh"><span class="sh-t">Skills</span></div>
-  <div class="skills">
-    Terraform<span class="sk">&bull;</span>AWS<span class="sk">&bull;</span>Ansible<span class="sk">&bull;</span>Docker<span class="sk">&bull;</span>Python<span class="sk">&bull;</span>GitHub Actions<span class="sk">&bull;</span>Jenkins<br>
-    Elasticsearch<span class="sk">&bull;</span>Grafana<span class="sk">&bull;</span>Linux<span class="sk">&bull;</span>Bash<span class="sk">&bull;</span>Git<span class="sk">&bull;</span>AI Agents<span class="sk">&bull;</span>n8n
+  <!-- Domains -->
+  <div class="sh"><span class="sh-t">Domains</span></div>
+  <div class="domain-grid">
+    <div class="domain-card">
+      <div class="domain-title">Infrastructure</div>
+      <div class="domain-skills">Terraform, AWS, Ansible, Kubernetes</div>
+    </div>
+    <div class="domain-card">
+      <div class="domain-title">CI / CD</div>
+      <div class="domain-skills">GitHub Actions, Jenkins</div>
+    </div>
+    <div class="domain-card">
+      <div class="domain-title">Observability</div>
+      <div class="domain-skills">Elasticsearch, Grafana</div>
+    </div>
+    <div class="domain-card">
+      <div class="domain-title">AI & Automation</div>
+      <div class="domain-skills">MCP, Agentic AI, Vector DB, RAG</div>
+    </div>
+    <div class="domain-card">
+      <div class="domain-title">Development</div>
+      <div class="domain-skills">Python, React, Node.js</div>
+    </div>
+    <div class="domain-card">
+      <div class="domain-title">Systems</div>
+      <div class="domain-skills">Docker, Linux, Bash, Git</div>
+    </div>
   </div>
 
   <!-- Experience -->
@@ -458,7 +520,8 @@
       </div>
       <div class="jc">Consejo de la Judicatura, Ecuador</div>
       <ul class="jb">
-        <li>Presided over district court hearings and authored published judicial verdicts in public procurement, comptroller general, administrative disciplinary law, and intellectual property. Published verdicts: adrienesquerre.blogspot.com</li>
+        <li>Presided over district court hearings and authored judicial verdicts in public procurement, comptroller general, administrative disciplinary law, and intellectual property</li>
+        <li>Published verdicts: adrienesquerre.blogspot.com</li>
       </ul>
     </div>
 
@@ -469,7 +532,7 @@
   <div class="bottom">
 
     <div class="bcol">
-      <div class="bh">Education</div>
+      <div class="bh"><svg class="bh-icon" viewBox="0 0 24 24"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3 1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>Education</div>
       <div class="edu-item">
         <div class="edu-deg">MSc Advanced Legal Sciences</div>
         <div class="edu-sch">Universitat Pompeu Fabra, Barcelona &middot; 2008</div>
@@ -481,18 +544,19 @@
     </div>
 
     <div class="bcol">
-      <div class="bh">Certifications</div>
+      <div class="bh"><svg class="bh-icon" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>Certifications</div>
+      <div class="cert">BigPanda Professional &ndash; AIOps &middot; 2026</div>
       <div class="cert">AWS Certified Developer Associate &middot; 2021</div>
       <div class="cert">Google Ads Certified &middot; 2020</div>
       <div class="cert">Google Analytics Certified &middot; 2020</div>
     </div>
 
     <div class="bcol narrow">
-      <div class="bh">Languages</div>
+      <div class="bh"><svg class="bh-icon" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95a15.65 15.65 0 0 0-1.38-3.56A8.03 8.03 0 0 1 18.92 8zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2s.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56A7.987 7.987 0 0 1 5.08 16zm2.95-8H5.08a7.987 7.987 0 0 1 4.33-3.56A15.65 15.65 0 0 0 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2s.07-1.35.16-2h4.68c.09.65.16 1.32.16 2s-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2s-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"/></svg>Languages</div>
       <div class="langs">
-        English<br>
-        French<br>
-        Spanish
+        English <span class="lang-dot">&bull;</span> <span class="lang-level">Full proficiency</span><br>
+        French <span class="lang-dot">&bull;</span> <span class="lang-level">Native</span><br>
+        Spanish <span class="lang-dot">&bull;</span> <span class="lang-level">Native</span>
       </div>
     </div>
 
