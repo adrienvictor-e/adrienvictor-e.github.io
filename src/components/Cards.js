@@ -43,7 +43,7 @@ function Cards() {
                         <CardItemLink
                         src = {homelabpreview}
                         text="Kubernetes Homelab"
-                        subtext={[<h3>✓ 4x Raspberry Pi 5 running K3s with Prometheus, Loki & Grafana<br></br>✓ CPU, memory & network dashboards for all nodes, accessible worldwide via HTTPS</h3>]}
+                        subtext={[<h3>✓ 4x Raspberry Pi 5 running K3s with Prometheus, Loki & Grafana<br></br>✓ CPU, memory, network & disk dashboards for all 4 nodes, accessible worldwide via HTTPS</h3>]}
                         label='Infrastructure'
                         href="https://lab.adrienesquerre.com"
                         />

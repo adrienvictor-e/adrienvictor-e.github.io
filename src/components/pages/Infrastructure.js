@@ -23,7 +23,7 @@ function Infrastructure() {
                 Full observability stack: Prometheus metrics, Loki logs, OpenTelemetry collector DaemonSet, Grafana dashboards
                 </li>
                 <li>
-                CPU, memory and network traffic panels for all 4 nodes, refreshing every 30 seconds
+                CPU, memory, network and disk I/O panels for all 4 nodes including the DNS/Ansible node, refreshing every 30 seconds
                 </li>
                 <li>
                 Accessible worldwide over HTTPS via Cloudflare Tunnel
