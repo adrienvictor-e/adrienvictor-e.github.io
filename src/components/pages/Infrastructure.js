@@ -17,10 +17,13 @@ function Infrastructure() {
             <ul>
               <h3>
                 <li>
-                2x Raspberry Pi 5 running K3s with 1 control plane + 1 worker node
+                4x Raspberry Pi 5 on Ethernet backbone — 1 K3s control plane, 2 workers, 1 DNS/Ansible node
                 </li>
                 <li>
-                Real-time Grafana monitoring dashboards updating every 30 seconds
+                Full observability stack: Prometheus metrics, Loki logs, OpenTelemetry collector DaemonSet, Grafana dashboards
+                </li>
+                <li>
+                CPU, memory and network traffic panels for all 4 nodes, refreshing every 30 seconds
                 </li>
                 <li>
                 Accessible worldwide over HTTPS via Cloudflare Tunnel
